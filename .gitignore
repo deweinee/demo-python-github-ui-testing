@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# actual credentials for github accounts
+config/settings_actual.py
+
+# PyCharm
+.idea
