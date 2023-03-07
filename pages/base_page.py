@@ -1,3 +1,9 @@
+"""
+Base page functions
+"""
+
+import time
+
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,17 +23,21 @@ class BasePage:
     def get_element(self, method, selector):
         try:
             return self.browser.find_element(method, selector)
-        except NoSuchElementException as e:
-            return e
+        except NoSuchElementException as no_such_element_exception:
+            return no_such_element_exception
 
     def get_element_with_timeout(self, method, selector, timeout=5):
         try:
             return WebDriverWait(self.browser, timeout, 1, TimeoutException).until(
                 EC.presence_of_element_located((method, selector)))
-        except TimeoutException as e:
-            return e
+        except TimeoutException as timeout_exception:
+            return timeout_exception
 
     def get_current_url(self):
+        return self.browser.current_url
+
+    def get_current_url_with_explicit_timeout(self):
+        time.sleep(1)
         return self.browser.current_url
 
     def get_user_icon(self):

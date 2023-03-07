@@ -1,3 +1,7 @@
+"""
+Tests: user profile
+"""
+
 import pytest
 
 from config.settings import ALIEN_PROFILE
@@ -10,5 +14,5 @@ class TestUserProfileUnauthorizedUser:
         page = UserProfilePage(browser_scope_function, url)
         page.open_page()
         page.click_follow_button()
-        page_url = page.get_current_url()
+        page_url = page.get_current_url_with_explicit_timeout()
         assert "github.com/login" in page_url, f"Page url should contain github.com/login but is in fact {page_url}"

@@ -1,3 +1,7 @@
+"""
+Repository page functions
+"""
+
 from locators.repository_page_locators import RepositoryPageLocators
 from pages.base_page import BasePage
 

@@ -1,3 +1,7 @@
+"""
+Tests: login
+"""
+
 import pytest
 
 from config.settings import LOGIN, PASSWORD
@@ -5,7 +9,7 @@ from pages.login_page import LoginPage
 
 
 class TestLogin:
-    @pytest.mark.skipif(PASSWORD == "", reason="no credentials provided in config/settings.py")
+    @pytest.mark.skipif(PASSWORD == "", reason="No credentials provided in config/settings.py")
     @pytest.mark.smoke
     def test_should_be_successful_login(self, browser_scope_function, login=LOGIN, password=PASSWORD):
         page = LoginPage(browser_scope_function)

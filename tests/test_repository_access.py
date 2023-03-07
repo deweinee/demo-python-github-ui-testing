@@ -1,3 +1,7 @@
+"""
+Tests: repository access
+"""
+
 import pytest
 
 from config.settings import (ALIEN_PRIVATE_REPOSITORY,
@@ -22,7 +26,7 @@ class TestRepositoryAccessUnauthorisedUser:
         assert "Page not found" in page_title, f"Page title should be 'Page not found' but is in fact {page_title}"
 
 
-@pytest.mark.skipif(PASSWORD == "", reason="no credentials provided in config/settings.py")
+@pytest.mark.skipif(PASSWORD == "", reason="No credentials provided in config/settings.py")
 @pytest.mark.usefixtures("ui_login")
 @pytest.mark.usefixtures("browser_scope_class")
 class TestRepositoryAccessLoggedInUser:
