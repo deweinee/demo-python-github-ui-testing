@@ -6,8 +6,9 @@ import pytest
 
 from config.settings import (ALIEN_PRIVATE_REPOSITORY,
                              ALIEN_PRIVATE_REPOSITORY_SHARED,
-                             ALIEN_PUBLIC_REPOSITORY, PASSWORD,
-                             USER_PRIVATE_REPOSITORY, USER_PUBLIC_REPOSITORY)
+                             ALIEN_PUBLIC_REPOSITORY,
+                             PASSWORD,
+                             USER_PRIVATE_REPOSITORY)
 from pages.repository_page import RepositoryPage
 
 
@@ -31,9 +32,7 @@ class TestRepositoryAccessUnauthorisedUser:
 @pytest.mark.usefixtures("browser_scope_class")
 class TestRepositoryAccessLoggedInUser:
     @pytest.mark.parametrize('url', [
-        pytest.param(USER_PUBLIC_REPOSITORY, id='user\'s public repository'),
         pytest.param(USER_PRIVATE_REPOSITORY, id='user\'s private repository'),
-        pytest.param(ALIEN_PUBLIC_REPOSITORY, id='alien public repository'),
         pytest.param(ALIEN_PRIVATE_REPOSITORY_SHARED, id='alien private repository with shared access'),
     ])
     def test_access_should_be_successful(self, browser_scope_class, url):

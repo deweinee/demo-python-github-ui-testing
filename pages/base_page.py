@@ -23,15 +23,15 @@ class BasePage:
     def get_element(self, method, selector):
         try:
             return self.browser.find_element(method, selector)
-        except NoSuchElementException as no_such_element_exception:
-            return no_such_element_exception
+        except NoSuchElementException:
+            return False
 
-    def get_element_with_timeout(self, method, selector, timeout=5):
+    def get_element_with_timeout(self, method, selector, timeout=3):
         try:
             return WebDriverWait(self.browser, timeout, 1, TimeoutException).until(
                 EC.presence_of_element_located((method, selector)))
-        except TimeoutException as timeout_exception:
-            return timeout_exception
+        except TimeoutException:
+            return False
 
     def get_current_url(self):
         return self.browser.current_url
