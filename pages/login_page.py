@@ -1,3 +1,7 @@
+"""
+Login page functions
+"""
+
 from locators.login_page_locators import LoginPageLocators
 from pages.base_page import BasePage
 

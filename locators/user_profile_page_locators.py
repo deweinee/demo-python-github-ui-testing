@@ -1,3 +1,8 @@
+"""
+Locators: user profile page
+"""
+
+
 from selenium.webdriver.common.by import By
 
 

@@ -1,3 +1,7 @@
+"""
+Locators: login page
+"""
+
 from selenium.webdriver.common.by import By
 
 

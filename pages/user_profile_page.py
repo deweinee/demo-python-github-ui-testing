@@ -1,3 +1,7 @@
+"""
+User profile page functions
+"""
+
 from locators.user_profile_page_locators import UserProfilePageLocators
 from pages.base_page import BasePage
 

@@ -1,3 +1,8 @@
+"""
+Locators: repository page
+"""
+
+
 from selenium.webdriver.common.by import By
 
 
