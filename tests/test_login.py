@@ -12,6 +12,9 @@ class TestLogin:
     @pytest.mark.xfail
     @pytest.mark.smoke
     def test_should_be_successful_login(self, browser_scope_function, login=LOGIN, password=PASSWORD):
+        """
+        Authorization with correct login and password should be successful
+        """
         page = LoginPage(browser_scope_function)
         page.open_page()
         page.login(login, password)
@@ -24,6 +27,9 @@ class TestLogin:
         pytest.param('incorrect_password', id='incorrect_password'),
     ])
     def test_login_incorrect_password(self, browser_scope_function, password, login=LOGIN):
+        """
+        Authorization with incorrect login and password should fail
+        """
         page = LoginPage(browser_scope_function)
         page.open_page()
         page.login(login, password)
