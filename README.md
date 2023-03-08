@@ -1,6 +1,6 @@
 # UI autotests example for [github.com](https://github.com/)
 
-### Technology stack:
+### Technology stack
 Python, PyTest, Selenium
 
 ### Tests
@@ -16,3 +16,12 @@ Python, PyTest, Selenium
 5. Someone else's private repository should not be accessible for the authorized user
 #### User profile page tests:
 1. Unauthorized user should be redirected to login page after clicking 'follow' button
+
+-----
+
+#### Very basic CI/CD is set up for this repository:
+  - A workflow with pylint checks is created in GitHub Actions
+  - Direct merging into main is prohibited, all commits must be made to a non-protected branch and submitted via a pull request
+  - All conversations on code must be resolved before a pull request can be merged
+  - Pylint checks must pass before merging a pull request
+  
