@@ -4,8 +4,9 @@
 Python, PyTest, Selenium
 
 ### Run
-In Chrome (default configuration): pytest
-In Firefox: pytest --browser_name=firefox
+In Chrome (default configuration): `pytest`
+
+In Firefox: `pytest --browser_name=firefox`
 
 
 ### Tests
