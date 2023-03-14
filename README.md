@@ -3,6 +3,12 @@
 ### Technology stack
 Python, PyTest, Selenium
 
+### Run
+In Chrome (default configuration): `pytest`
+
+In Firefox: `pytest --browser_name=firefox`
+
+
 ### Tests
 #### Login tests:
 1. Authorization with correct login and password should be successful
